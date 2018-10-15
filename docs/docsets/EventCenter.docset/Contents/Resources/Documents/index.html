@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EventCenter  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="EventCenter  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">EventCenter Docs</a> (66% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">EventCenter Reference</a>
+        <img id="carat" src="img/carat.png" />
+        EventCenter  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/EventCenter.html">EventCenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ObserverPriority.html">ObserverPriority</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:11EventCenter0A0a">Event</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:11EventCenter16ObserverCallbacka">ObserverCallback</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='swift-event-center' class='heading'>Swift Event Center</h1>
+
+<p><a href="swift.org"><img src="https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat" alt="swift-version"></a>
+<a href="https://github.com/apple/swift-package-manager"><img src="https://img.shields.io/badge/spm-v1.0.0-blue.svg" alt="spm"></a>
+<a href="https://travis-ci.org/ladislas/SwiftEventCenter"><img src="https://travis-ci.org/ladislas/SwiftEventCenter.svg" alt="Build Status"></a>
+<a href="https://sonarcloud.io/dashboard?id=ladislas_SwiftEventCenter"><img src="https://sonarcloud.io/api/project_badges/measure?project=ladislas_SwiftEventCenter&metric=alert_status" alt="SonarCloud"></a>
+<a href="https://sonarcloud.io/dashboard?id=ladislas_SwiftEventCenter"><img src="https://sonarcloud.io/api/project_badges/measure?project=ladislas_SwiftEventCenter&metric=coverage" alt="Coverage"></a>
+<a href="https://github.com/ladislas/SwiftEventCenter/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-lightgrey.svg" alt="SwiftEventCenter"></a></p>
+<h2 id='about' class='heading'>About</h2>
+
+<p>Swift Event Center to create custom events and respond to them.</p>
+
+<p>The idea was to build a simple event center from scratch to:</p>
+
+<ul>
+<li>better understand how a notification/event center would work</li>
+<li>have simple event manager for simple tasks</li>
+<li>in pure Swift</li>
+<li>and not use Apple&rsquo;s Notification Center</li>
+</ul>
+
+<p>The interesting thing about the process is that while building it, I got a deeper understanding of how Notification Center.</p>
+
+<p>To make it easier for new comers, I decided to keep Apple&rsquo;s way of naming things.</p>
+
+<p><strong>Note:</strong> EventCenter is not meant to be a full replacement of Notification Center. It is a simpler alternative (as in <q>*simpler to use, but also simpler in terms of functionalities*</q>) that should be good enough for <em>simple projects</em>.</p>
+<h3 id='features' class='heading'>Features</h3>
+
+<p>EventCenter allows you to:</p>
+
+<ul>
+<li>[x] - add observer for <code>Event.Name</code> (a.k.a. <code>Notification.Name</code>)</li>
+<li>[x] - specify a name for added observers so that they can be removed independently</li>
+<li>[x] - remove all observers for a specific <code>Event.Name</code></li>
+<li>[x] - remove one observer with a specific <code>name</code> for a specific <code>Event.Name</code></li>
+<li>[x] - post events and pass <code>object:Any?</code> &amp; <code>userInfo:[AnyHashable:Any]?</code></li>
+<li>[ ] - specify priority for each observer (<strong>not implemented yet</strong>)</li>
+</ul>
+<h2 id='installation' class='heading'>Installation</h2>
+
+<p>With SPM, add the following to the dependencies of your <code>Package.swift</code></p>
+<pre class="highlight swift"><code><span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/ladislas/SwiftEventCenter"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"1.0.0"</span><span class="p">)</span>
+</code></pre>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p><code><a href="Typealiases.html#/s:11EventCenter0A0a">Event</a></code> is just a <code>typealias</code> for <code>Notification</code>.</p>
+
+<p>See <a href="./Examples">Examples</a> &amp; <a href="./Tests">Tests</a> for more information.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">EventCenter</span>
+
+<span class="k">let</span> <span class="nv">ec</span> <span class="o">=</span> <span class="kt">EventCenter</span><span class="p">()</span>
+
+<span class="o">...</span>
+
+<span class="n">ec</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="nv">forEvent</span><span class="p">:</span> <span class="kt">Event</span><span class="o">.</span><span class="kt">Name</span><span class="p">(</span><span class="s">"event1"</span><span class="p">),</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"obs1"</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="p">{</span> <span class="nv">event</span><span class="p">:</span> <span class="kt">Event</span> <span class="k">in</span> 
+
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">obj</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">object</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Hello, </span><span class="se">\(</span><span class="n">obj</span><span class="se">)</span><span class="s">!"</span><span class="p">)</span> 
+    <span class="p">}</span>
+
+<span class="p">})</span>
+
+<span class="o">...</span>
+
+<span class="n">ec</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="kt">Event</span><span class="o">.</span><span class="kt">Name</span><span class="p">(</span><span class="s">"event1"</span><span class="p">),</span> <span class="nv">object</span><span class="p">:</span> <span class="s">"World"</span><span class="p">)</span>
+</code></pre>
+<h2 id='authors' class='heading'>Authors</h2>
+
+<p>Made with ❤️ by:</p>
+
+<ul>
+<li><strong>Ladislas de Toldi</strong> - <a href="https://github.com/ladislas">ladislas</a></li>
+</ul>
+<h2 id='license' class='heading'>License</h2>
+
+<p>Apache 2.0 @ Ladislas de Toldi</p>
+
+<p><strong>Original Work</strong></p>
+
+<p><em>This project is based on great people&rsquo;s ideas. The original idea was created by <a href="https://github.com/StephenHaney/Swift-Custom-Events">Stephen Haney</a>. It was then improved by <a href="https://github.com/robinwalterfit">Robin Walter</a>&lsquo;s <a href="https://github.com/robinwalterfit/Swift-Events">Swift-Events</a>. First I wanted to fork Robin&rsquo;s repo but after spending a couple of hours on it, I decided to rewrite most of it. Original work from <a href="https://github.com/StephenHaney">Stephen Haney</a> &amp; <a href="https://github.com/robinwalterfit">Robin Walter</a> is under MIT.</em></p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/ladislas/SwiftEventCenter" target="_blank" rel="external">Ladislas de Toldi</a>. All rights reserved. (Last updated: 2018-10-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

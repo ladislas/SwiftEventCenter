@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EventCenter Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/EventCenter" class="dashAnchor"></a>
+    <a title="EventCenter Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">EventCenter Docs</a> (66% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">EventCenter Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        EventCenter Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/EventCenter.html">EventCenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ObserverPriority.html">ObserverPriority</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:11EventCenter0A0a">Event</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:11EventCenter16ObserverCallbacka">ObserverCallback</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>EventCenter</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">EventCenter</span></code></pre>
+
+                </div>
+              </div>
+            <p>EventCenter class to add &amp; remove observers for specific events.</p>
+<h2 id='usage-example' class='heading'>Usage Example:</h2>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">EventCenter</span>
+</code></pre>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Intialization"></a>
+                <a name="//apple_ref/swift/Section/Intialization" class="dashAnchor"></a>
+                <a href="#/Intialization">
+                  <h3 class="section-name">Intialization</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11EventCenterAACABycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11EventCenterAACABycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize Event Center.</p>
+<h2 id='usage-example' class='heading'>Usage Example:</h2>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ec</span> <span class="o">=</span> <span class="kt">EventCenter</span><span class="p">()</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Add%20observers"></a>
+                <a name="//apple_ref/swift/Section/Add observers" class="dashAnchor"></a>
+                <a href="#/Add%20observers">
+                  <h3 class="section-name">Add observers</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11EventCenterAAC11addObserver03forA04name8priority8callbackySo18NSNotificationNamea_SSSgs5UInt8Vy10Foundation12NotificationVctF"></a>
+                    <a name="//apple_ref/swift/Method/addObserver(forEvent:name:priority:callback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11EventCenterAAC11addObserver03forA04name8priority8callbackySo18NSNotificationNamea_SSSgs5UInt8Vy10Foundation12NotificationVctF">addObserver(forEvent:name:priority:callback:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add observer with optional name for specific event.</p>
+<h2 id='usage-example' class='heading'>Usage Example:</h2>
+<pre class="highlight swift"><code><span class="n">ec</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="nv">forEvent</span><span class="p">:</span> <span class="kt">Event</span><span class="o">.</span><span class="kt">Name</span><span class="p">(</span><span class="s">"event1"</span><span class="p">),</span> <span class="nv">name</span><span class="p">:</span> <span class="s">"obs1"</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="p">{</span> <span class="nv">event</span><span class="p">:</span> <span class="kt">Event</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">obj</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">object</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Hello, </span><span class="se">\(</span><span class="n">obj</span><span class="se">)</span><span class="s">!"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    <p><code>priority</code> is not yet implemented</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addObserver</span><span class="p">(</span><span class="n">forEvent</span> <span class="nv">event</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11EventCenter0A0a">Event</a></span><span class="o">.</span><span class="kt">Name</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">priority</span><span class="p">:</span> <span class="kt">UInt8</span> <span class="o">=</span> <span class="kt"><a href="../Classes/ObserverPriority.html">ObserverPriority</a></span><span class="o">.</span><span class="n">normal</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Typealiases.html#/s:11EventCenter16ObserverCallbacka">ObserverCallback</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>event</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>Event.Name</code> (a.k.a. <code>Notification.Name</code>) the observer must be registered to</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional name of the oberserver, can be used to remove the observer later</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>priority</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the priority of the observer</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the function you want to perform when the event is posted</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Remove%20observers"></a>
+                <a name="//apple_ref/swift/Section/Remove observers" class="dashAnchor"></a>
+                <a href="#/Remove%20observers">
+                  <h3 class="section-name">Remove observers</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11EventCenterAAC15removeObservers03forA0ySo18NSNotificationNamea_tF"></a>
+                    <a name="//apple_ref/swift/Method/removeObservers(forEvent:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11EventCenterAAC15removeObservers03forA0ySo18NSNotificationNamea_tF">removeObservers(forEvent:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove all observers of specific event.</p>
+<h2 id='usage-example' class='heading'>Usage Example:</h2>
+<pre class="highlight swift"><code><span class="n">ec</span><span class="o">.</span><span class="nf">removeObservers</span><span class="p">(</span><span class="nv">forEvent</span><span class="p">:</span> <span class="kt">Event</span><span class="o">.</span><span class="kt">Name</span><span class="p">(</span><span class="s">"event1"</span><span class="p">))</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeObservers</span><span class="p">(</span><span class="n">forEvent</span> <span class="nv">event</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11EventCenter0A0a">Event</a></span><span class="o">.</span><span class="kt">Name</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>event</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>event name</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11EventCenterAAC14removeObserver4name03forA0ySSSg_So18NSNotificationNameatF"></a>
+                    <a name="//apple_ref/swift/Method/removeObserver(name:forEvent:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11EventCenterAAC14removeObserver4name03forA0ySSSg_So18NSNotificationNameatF">removeObserver(name:forEvent:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove all observers of specific event.</p>
+<h2 id='usage-example' class='heading'>Usage Example:</h2>
+<pre class="highlight swift"><code><span class="n">ec</span><span class="o">.</span><span class="nf">removeObserver</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"obs1"</span><span class="p">,</span> <span class="nv">forEvent</span><span class="p">:</span> <span class="kt">Event</span><span class="o">.</span><span class="kt">Name</span><span class="p">(</span><span class="s">"event1"</span><span class="p">))</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeObserver</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="n">forEvent</span> <span class="nv">event</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11EventCenter0A0a">Event</a></span><span class="o">.</span><span class="kt">Name</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>name of the observer(s) to be removed</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>event</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>event name</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11EventCenterAAC18removeAllObserversyyF"></a>
+                    <a name="//apple_ref/swift/Method/removeAllObservers()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11EventCenterAAC18removeAllObserversyyF">removeAllObservers()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Remove all the observers from the Event Center.</p>
+<h2 id='usage-example' class='heading'>Usage Example:</h2>
+<pre class="highlight swift"><code><span class="n">ec</span><span class="o">.</span><span class="nf">removeAllObservers</span><span class="p">()</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeAllObservers</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Post%20events"></a>
+                <a name="//apple_ref/swift/Section/Post events" class="dashAnchor"></a>
+                <a href="#/Post%20events">
+                  <h3 class="section-name">Post events</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11EventCenterAAC4post5event6object8userInfoySo18NSNotificationNamea_ypSgSDys11AnyHashableVypGSgtF"></a>
+                    <a name="//apple_ref/swift/Method/post(event:object:userInfo:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11EventCenterAAC4post5event6object8userInfoySo18NSNotificationNamea_ypSgSDys11AnyHashableVypGSgtF">post(event:object:userInfo:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Post an event with an optional <code>object</code> &amp; <code>userInfo</code></p>
+<h2 id='usage-example' class='heading'>Usage Example:</h2>
+<pre class="highlight swift"><code><span class="n">ec</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="kt">Event</span><span class="o">.</span><span class="kt">Name</span><span class="p">(</span><span class="s">"event1"</span><span class="p">),</span> <span class="nv">object</span><span class="p">:</span> <span class="s">"World"</span><span class="p">,</span> <span class="nv">userInfo</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span> <span class="s">"String"</span><span class="p">,</span> <span class="s">"id"</span><span class="p">:</span> <span class="mi">42</span><span class="p">])</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">post</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11EventCenter0A0a">Event</a></span><span class="o">.</span><span class="kt">Name</span><span class="p">,</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">userInfo</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>event</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>name of the event</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>single object you want to pass to the observer</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userInfo</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>dictionnary you want to pass to the observer</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/ladislas/SwiftEventCenter" target="_blank" rel="external">Ladislas de Toldi</a>. All rights reserved. (Last updated: 2018-10-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
