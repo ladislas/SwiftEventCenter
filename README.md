@@ -2,6 +2,7 @@
 
 [![swift-version](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](swift.org)
 [![spm](https://img.shields.io/badge/spm-v1.0.0-blue.svg)](https://github.com/apple/swift-package-manager)
+[![CocoaPods](https://img.shields.io/cocoapods/v/SwiftEventCenter.svg)](https://cocoapods.org/pods/SwiftEventCenter)
 [![Build Status](https://travis-ci.org/ladislas/SwiftEventCenter.svg)](https://travis-ci.org/ladislas/SwiftEventCenter)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ladislas_SwiftEventCenter&metric=alert_status)](https://sonarcloud.io/dashboard?id=ladislas_SwiftEventCenter)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ladislas_SwiftEventCenter&metric=coverage)](https://sonarcloud.io/dashboard?id=ladislas_SwiftEventCenter)
@@ -49,7 +50,7 @@ With SPM, add the following to the dependencies of your `Package.swift`
 
 `Event` is just a `typealias` for `Notification`.
 
-See [Examples](./Examples) & [Tests](./Tests) for more information.
+See [docs](./docs), [Examples](./Examples) & [Tests](./Tests) for more information.
 
 ```swift
 import EventCenter
