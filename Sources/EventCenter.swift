@@ -70,9 +70,9 @@ public class EventCenter {
 	- Parameter priority: the priority of the observer
 	- Parameter callback: the function you want to perform when the event is posted
 	*/
-	public func addObserver(forEvent event: Event.Name, name: String? = nil, priority: UInt8 = ObserverPriority.normal, callback: @escaping ObserverCallback) {
+	public func addObserver(forEvent event: Event.Name, withId id: String? = nil, priority: UInt8 = ObserverPriority.normal, callback: @escaping ObserverCallback) {
 
-		let os = ObserverStructure(name: name, priority: priority, callback: callback)
+		let os = ObserverStructure(id: id, priority: priority, callback: callback)
 
 		if let _ = self.observers[event] {
 			observers[event]?.append(os)
@@ -116,7 +116,7 @@ public class EventCenter {
 	- Parameter name: name of the observer(s) to be removed
 	- Parameter event: event name
 	*/
-	public func removeObserver(name: String?, forEvent event: Event.Name) {
+	public func removeObserver(withId id: String?, forEvent event: Event.Name) {
 
 		if let observers = self.observers[event] {
 
@@ -125,7 +125,7 @@ public class EventCenter {
 				return
 			}
 
-			self.observers[event]?.removeAll(where: {$0.name == name})
+			self.observers[event]?.removeAll(where: {$0.id == id})
 
 		}
 
