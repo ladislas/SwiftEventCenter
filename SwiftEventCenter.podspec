@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   
   spec.name        = "SwiftEventCenter"
-  spec.version     = "1.0.0"
+  spec.version     = "1.1.0"
   spec.summary     = "Swift Event Center to create custom events and respond to them"
   spec.homepage    = "https://github.com/ladislas/SwiftEventCenter"
   spec.license     = { :type => "Apache License, Version 2.0" }
