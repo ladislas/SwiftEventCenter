@@ -29,7 +29,7 @@ class ObserverStructure {
 	//
 
 	/**
-	The name of the observer
+	The id of the observer
 	*/
 	let id: String?
 
@@ -52,7 +52,7 @@ class ObserverStructure {
 	/**
 	Initialize an observer struct
 
-	- Parameter name: name of the observer
+	- Parameter id: id of the observer
 	- Parameter priority: priority of the observer
 	- Parameter callback: callback to be called when event is posted
 	*/
@@ -73,7 +73,7 @@ extension ObserverStructure: Equatable {
 
 	- Parameter lhs: observer structure
 	- Parameter rhs: observer strucutre
-	- Returns: true if names are the same
+	- Returns: true if ids are the same
 	*/
 	static func == (lhs: ObserverStructure, rhs: ObserverStructure) -> Bool {
 		return
