@@ -66,7 +66,7 @@ public class EventCenter {
 	- Warning: `priority` is not yet implemented
 
 	- Parameter event: `Event.Name` (a.k.a. `Notification.Name`) the observer must be registered to
-	- Parameter name: Optional name of the oberserver, can be used to remove the observer later
+	- Parameter id: Optional id for the oberserver, can be used to remove the observer later
 	- Parameter priority: the priority of the observer
 	- Parameter callback: the function you want to perform when the event is posted
 	*/
@@ -113,7 +113,7 @@ public class EventCenter {
 	ec.removeObserver(name: "obs1", forEvent: Event.Name("event1"))
 	```
 
-	- Parameter name: name of the observer(s) to be removed
+	- Parameter id: id of the observer(s) to be removed
 	- Parameter event: event name
 	*/
 	public func removeObserver(withId id: String?, forEvent event: Event.Name) {
@@ -156,7 +156,7 @@ public class EventCenter {
 	## Usage Example:
 
 	```swift
-	ec.post(event: Event.Name("event1"), object: "World", userInfo: [1: "String", "id": 42])
+	ec.post(event: Event.Name("event1"), object: "World", userInfo: [42: "String", "Number": 42])
 	```
 
 	- Parameter event: name of the event

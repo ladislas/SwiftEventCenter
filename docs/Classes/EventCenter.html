@@ -173,12 +173,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>name</em>
+                                <em>id</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>Optional name of the oberserver, can be used to remove the observer later</p>
+                                  <p>Optional id for the oberserver, can be used to remove the observer later</p>
                                 </div>
                               </td>
                             </tr>
@@ -306,12 +306,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>name</em>
+                                <em>id</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>name of the observer(s) to be removed</p>
+                                  <p>id of the observer(s) to be removed</p>
                                 </div>
                               </td>
                             </tr>
@@ -389,7 +389,7 @@
                       <div class="abstract">
                         <p>Post an event with an optional <code>object</code> &amp; <code>userInfo</code></p>
 <h2 id='usage-example' class='heading'>Usage Example:</h2>
-<pre class="highlight swift"><code><span class="n">ec</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="kt">Event</span><span class="o">.</span><span class="kt">Name</span><span class="p">(</span><span class="s">"event1"</span><span class="p">),</span> <span class="nv">object</span><span class="p">:</span> <span class="s">"World"</span><span class="p">,</span> <span class="nv">userInfo</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span> <span class="s">"String"</span><span class="p">,</span> <span class="s">"id"</span><span class="p">:</span> <span class="mi">42</span><span class="p">])</span>
+<pre class="highlight swift"><code><span class="n">ec</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="kt">Event</span><span class="o">.</span><span class="kt">Name</span><span class="p">(</span><span class="s">"event1"</span><span class="p">),</span> <span class="nv">object</span><span class="p">:</span> <span class="s">"World"</span><span class="p">,</span> <span class="nv">userInfo</span><span class="p">:</span> <span class="p">[</span><span class="mi">42</span><span class="p">:</span> <span class="s">"String"</span><span class="p">,</span> <span class="s">"Number"</span><span class="p">:</span> <span class="mi">42</span><span class="p">])</span>
 </code></pre>
 
                       </div>

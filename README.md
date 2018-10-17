@@ -1,7 +1,7 @@
 # Swift Event Center
 
 [![swift-version](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](swift.org)
-[![spm](https://img.shields.io/badge/spm-v1.1.0-blue.svg)](https://github.com/apple/swift-package-manager)
+[![spm](https://img.shields.io/badge/spm-v1.1.1-blue.svg)](https://github.com/apple/swift-package-manager)
 [![CocoaPods](https://img.shields.io/cocoapods/v/SwiftEventCenter.svg)](https://cocoapods.org/pods/SwiftEventCenter)
 [![Build Status](https://travis-ci.org/ladislas/SwiftEventCenter.svg)](https://travis-ci.org/ladislas/SwiftEventCenter)
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=ladislas_SwiftEventCenter&metric=alert_status)](https://sonarcloud.io/dashboard?id=ladislas_SwiftEventCenter)
@@ -42,7 +42,7 @@ EventCenter allows you to:
 With SPM, add the following to the dependencies of your `Package.swift`
 
 ```swift
-.package(url: "https://github.com/ladislas/SwiftEventCenter", from: "1.1.0")
+.package(url: "https://github.com/ladislas/SwiftEventCenter", from: "1.1.1")
 ```
 
 
