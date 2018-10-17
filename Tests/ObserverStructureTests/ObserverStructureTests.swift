@@ -16,10 +16,10 @@ final class EventActionTests: XCTestCase {
 
 		func myFunction(event: Event) {}
 
-		let myAction = ObserverStructure(priority: ObserverPriority.normal, callback: myFunction)
+		let myObserver = ObserverStructure(priority: ObserverPriority.normal, callback: myFunction)
 
-		XCTAssertEqual(myAction.priority, ObserverPriority.normal)
-		XCTAssertNotNil(myAction.callback)
+		XCTAssertEqual(myObserver.priority, ObserverPriority.normal)
+		XCTAssertNotNil(myObserver.callback)
 
 	}
 
@@ -27,10 +27,10 @@ final class EventActionTests: XCTestCase {
 
 		func myFunction(event: Event) {}
 
-		let myAction1 = ObserverStructure(name: "myFunction", priority: ObserverPriority.normal, callback: myFunction)
-		let myAction2 = ObserverStructure(name: "myFunction", priority: ObserverPriority.normal, callback: myFunction)
+		let myObserver1 = ObserverStructure(id: "obsId", priority: ObserverPriority.normal, callback: myFunction)
+		let myObserver2 = ObserverStructure(id: "obsId", priority: ObserverPriority.normal, callback: myFunction)
 
-		XCTAssertEqual(myAction1, myAction2)
+		XCTAssertEqual(myObserver1, myObserver2)
 
 	}
 
@@ -39,10 +39,10 @@ final class EventActionTests: XCTestCase {
 		func myFunction1(event: Event) {}
 		func myFunction2(event: Event) {}
 
-		let myAction1 = ObserverStructure(name: "myFunction", priority: ObserverPriority.normal, callback: myFunction1)
-		let myAction2 = ObserverStructure(name: "myFunction", priority: ObserverPriority.normal, callback: myFunction2)
+		let myObserver1 = ObserverStructure(id: "obsId", priority: ObserverPriority.normal, callback: myFunction1)
+		let myObserver2 = ObserverStructure(id: "obsId", priority: ObserverPriority.normal, callback: myFunction2)
 
-		XCTAssertEqual(myAction1, myAction2)
+		XCTAssertEqual(myObserver1, myObserver2)
 
 	}
 
@@ -50,10 +50,10 @@ final class EventActionTests: XCTestCase {
 
 		func myFunction1(event: Event) {}
 
-		let myAction1 = ObserverStructure(name: "myFunction1", priority: ObserverPriority.normal, callback: myFunction1)
-		let myAction2 = ObserverStructure(name: "myFunction2", priority: ObserverPriority.normal, callback: myFunction1)
+		let myObserver1 = ObserverStructure(id: "obsId1", priority: ObserverPriority.normal, callback: myFunction1)
+		let myObserver2 = ObserverStructure(id: "obsId2", priority: ObserverPriority.normal, callback: myFunction1)
 
-		XCTAssertNotEqual(myAction1, myAction2)
+		XCTAssertNotEqual(myObserver1, myObserver2)
 
 	}
 
@@ -62,10 +62,10 @@ final class EventActionTests: XCTestCase {
 		func myFunction1(event: Event) {}
 		func myFunction2(event: Event) {}
 
-		let myAction1 = ObserverStructure(name: "myFunction1", priority: ObserverPriority.normal, callback: myFunction1)
-		let myAction2 = ObserverStructure(name: "myFunction2", priority: ObserverPriority.normal, callback: myFunction2)
+		let myObserver1 = ObserverStructure(id: "obsId1", priority: ObserverPriority.normal, callback: myFunction1)
+		let myObserver2 = ObserverStructure(id: "obsId2", priority: ObserverPriority.normal, callback: myFunction2)
 
-		XCTAssertNotEqual(myAction1, myAction2)
+		XCTAssertNotEqual(myObserver1, myObserver2)
 
 	}
 

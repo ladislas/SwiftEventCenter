@@ -132,24 +132,24 @@ final class EventManagerTests: XCTestCase {
 		func eventHandler2(event: Event) {}
 		func eventHandler3(event: Event) {}
 
-		ec.addObserver(forEvent: .event, name: "obs1", callback: eventHandler1)
-		ec.addObserver(forEvent: .event, name: "obs2", callback: eventHandler2)
-		ec.addObserver(forEvent: .event, name: "obs3", callback: eventHandler3)
+		ec.addObserver(forEvent: .event, withId: "obs1", callback: eventHandler1)
+		ec.addObserver(forEvent: .event, withId: "obs2", callback: eventHandler2)
+		ec.addObserver(forEvent: .event, withId: "obs3", callback: eventHandler3)
 
 		XCTAssertEqual(ec.observers.count, 1)
 		XCTAssertEqual(ec.observers[.event]?.count, 3)
 
-		ec.removeObserver(name: "obs1", forEvent: .event)
+		ec.removeObserver(withId: "obs1", forEvent: .event)
 
 		XCTAssertEqual(ec.observers.count, 1)
 		XCTAssertEqual(ec.observers[.event]?.count, 2)
 
-		ec.removeObserver(name: "obs2", forEvent: .event)
+		ec.removeObserver(withId: "obs2", forEvent: .event)
 
 		XCTAssertEqual(ec.observers.count, 1)
 		XCTAssertEqual(ec.observers[.event]?.count, 1)
 
-		ec.removeObserver(name: "obs3", forEvent: .event)
+		ec.removeObserver(withId: "obs3", forEvent: .event)
 
 		XCTAssertEqual(ec.observers.count, 0)
 		XCTAssertNil(ec.observers[.event])
@@ -164,20 +164,20 @@ final class EventManagerTests: XCTestCase {
 		func eventHandler2(event: Event) {}
 		func eventHandler3(event: Event) {}
 
-		ec.addObserver(forEvent: .event, name: "obs1", callback: eventHandler1)
-		ec.addObserver(forEvent: .event, name: "obs1", callback: eventHandler2)
-		ec.addObserver(forEvent: .event, name: "obs3", callback: eventHandler3)
-		ec.addObserver(forEvent: .event, name: "obs1", callback: eventHandler2)
+		ec.addObserver(forEvent: .event, withId: "obs1", callback: eventHandler1)
+		ec.addObserver(forEvent: .event, withId: "obs1", callback: eventHandler2)
+		ec.addObserver(forEvent: .event, withId: "obs3", callback: eventHandler3)
+		ec.addObserver(forEvent: .event, withId: "obs1", callback: eventHandler2)
 
 		XCTAssertEqual(ec.observers.count, 1)
 		XCTAssertEqual(ec.observers[.event]?.count, 4)
 
-		ec.removeObserver(name: "obs1", forEvent: .event)
+		ec.removeObserver(withId: "obs1", forEvent: .event)
 
 		XCTAssertEqual(ec.observers.count, 1)
 		XCTAssertEqual(ec.observers[.event]?.count, 1)
 
-		ec.removeObserver(name: "obs3", forEvent: .event)
+		ec.removeObserver(withId: "obs3", forEvent: .event)
 
 		XCTAssertEqual(ec.observers.count, 0)
 		XCTAssertNil(ec.observers[.event])
@@ -192,19 +192,19 @@ final class EventManagerTests: XCTestCase {
 		func eventHandler2(event: Event) {}
 		func eventHandler3(event: Event) {}
 
-		ec.addObserver(forEvent: .event, name: "obs1", callback: eventHandler1)
+		ec.addObserver(forEvent: .event, withId: "obs1", callback: eventHandler1)
 		ec.addObserver(forEvent: .event, callback: eventHandler2)
 		ec.addObserver(forEvent: .event, callback: eventHandler3)
 
 		XCTAssertEqual(ec.observers.count, 1)
 		XCTAssertEqual(ec.observers[.event]?.count, 3)
 
-		ec.removeObserver(name: nil, forEvent: .event)
+		ec.removeObserver(withId: nil, forEvent: .event)
 
 		XCTAssertEqual(ec.observers.count, 1)
 		XCTAssertEqual(ec.observers[.event]?.count, 1)
 
-		ec.removeObserver(name: "obs1", forEvent: .event)
+		ec.removeObserver(withId: "obs1", forEvent: .event)
 
 		XCTAssertEqual(ec.observers.count, 0)
 		XCTAssertNil(ec.observers[.event])

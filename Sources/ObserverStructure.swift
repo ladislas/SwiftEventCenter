@@ -31,7 +31,7 @@ class ObserverStructure {
 	/**
 	The name of the observer
 	*/
-	let name: String?
+	let id: String?
 
 	/**
 	Callback of the observer
@@ -56,9 +56,9 @@ class ObserverStructure {
 	- Parameter priority: priority of the observer
 	- Parameter callback: callback to be called when event is posted
 	*/
-	init(name: String? = nil, priority: UInt8, callback: @escaping ObserverCallback) {
+	init(id: String? = nil, priority: UInt8, callback: @escaping ObserverCallback) {
 
-		self.name = name
+		self.id = id
 		self.priority = priority
 		self.callback = callback
 
@@ -77,7 +77,7 @@ extension ObserverStructure: Equatable {
 	*/
 	static func == (lhs: ObserverStructure, rhs: ObserverStructure) -> Bool {
 		return
-			lhs.name == rhs.name
+			lhs.id == rhs.id
 	}
 
 }
